@@ -1,0 +1,6 @@
+*.txt -crlf
+
+*.py -crlf
+
+*.json -crlf
+.gitattributes -crlf

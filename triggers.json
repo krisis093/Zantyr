@@ -1,0 +1,8 @@
+[
+ {"triggers":["nie"],
+  "chance" : 0.6,
+  "reactions":["{name}, ja bym tak nie przesadzał z tym negowaniem"]},
+ {"triggers":["kapitalizm"],
+  "chance":1,
+  "reactions":["KAPITALIZM, GŁUPCZE!"]}
+]
