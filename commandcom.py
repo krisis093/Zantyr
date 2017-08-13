@@ -14,6 +14,10 @@ def commandCom(client, message):
                     return "Proszę bardzo: {}".format("\n".join(["```{}```".format(x) for x in messages]))
                 else:
                     return "Nie mogę znaleźć żadnych wiadomości użytkownika {}".format(arg)
+		if message.content == "Zantyr, pokaż cycki":
+			r = requests.get('http://oboobs.ru/a/')
+			s = re.search('<div class="dimage"><img src="(.*?)"', r.text)
+			return r.text[s.start()+30:s.end()-1]
         else:
             return 'Ty chuju!'
 
