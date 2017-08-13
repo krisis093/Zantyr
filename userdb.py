@@ -14,7 +14,6 @@ class UsersDB(object):
             return int(gens[name])
         elif name in noms.keys():
             return int(noms[name])
-
     def addOrEditUser(self, id, data):
         if name not in self.db.keys():
             self.db[id] = data
