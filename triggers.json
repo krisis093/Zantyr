@@ -1,8 +1,23 @@
 [
- {"triggers":["nie"],
-  "chance" : 0.6,
+ {"triggers":[" nie "],
+  "chance" : 0.1,
   "reactions":["{name}, ja bym tak nie przesadzał z tym negowaniem"]},
  {"triggers":["kapitalizm"],
   "chance":1,
-  "reactions":["KAPITALIZM, GŁUPCZE!"]}
+  "reactions":["KAPITALIZM, GŁUPCZE!"]},
+ {"triggers":["leviathan", "Leviathan"],
+  "chance": 1,
+  "reactions":["Ścierviathan*"]},
+ {"triggers":["Everold","everold", "Evek", "evek"],
+  "chance": 0.3,
+  "reactions":["Dobrze, że zdechł."]},
+  {"triggers":["Pedofilia", "pedofilia"],
+  "chance": 1,
+  "reactions":["Vitav."]},
+  {"triggers":["Drakar", "drakar"],
+  "chance": 1,
+  "reactions":["Nie przywołuj tu tej spierdoliny."]},
+  {"triggers":["Mortis", "mortis"],
+  "chance": 1,
+  "reactions":["Co za spierdoliny..."]}
 ]
