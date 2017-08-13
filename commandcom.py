@@ -1,4 +1,5 @@
 import re
+import requests
 
 HISTORY = ['Zantyr, co (napisał(a)?|powiedział(a)?) (?P<arg>\w+)',
            'Zantyr, pokaż historię (wiadomości)? (użytkownika|gracza) (?P<arg>\w+)']
