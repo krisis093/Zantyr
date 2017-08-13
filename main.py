@@ -5,7 +5,7 @@ import random
 import json
 import importlib
 import os
-from userdb import UsersDB
+from userdb import userdb
 
 # serwer IP: 195.181.219.13
 
@@ -33,7 +33,7 @@ with open(WKURWFILE, "r") as f:
     for line in f:
         WKURWDICT.append(line)
 
-client.userdb = UsersDB()
+client.userdb = userdb
 
 
 @client.event
