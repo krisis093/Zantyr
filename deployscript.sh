@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 git pull
 pep8 *.py --ignore=E501
 killall screen
