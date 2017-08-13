@@ -44,7 +44,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     log.info("    {}({})@{}: {}".format(message.author.nick if message.author.nick else message.author.name, message.author.id, message.channel, message.content))
-    if message.author==client.user:
+    if message.author == client.user:
         log.debug("Oh, it's me")
     else:
         for extension in EXTENSIONS:
@@ -53,10 +53,10 @@ async def on_message(message):
                 client.send_typing(message.channel)
                 time.sleep(0.02 * len(msg) + 0.5)
                 await client.send_message(message.channel, msg.format(
-                    name = (message.author.nick if message.author.nick else message.author.name)))
+                    name=(message.author.nick if message.author.nick else message.author.name)))
                 break
         else:
-            if random.randint(0, WKURWRATE)==0:
+            if random.randint(0, WKURWRATE) == 0:
                 client.send_typing(message.channel)
                 time.sleep(1)
                 await client.send_message(message.channel, random.choice(WKURWDICT).format(
