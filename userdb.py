@@ -7,7 +7,6 @@ class UsersDB(object):
     def __init__(self):
         with open(self.DBFILE, 'r') as f:
             self.db = json.load(f)
-
     def expectGenitive(self, name):
         gens = dict([(name, id) for (id, u) in self.db.items() for name in u.names.genitives])
         noms = dict([(name, id) for (id, u) in self.db.items() for name in u.names.nominatives])
