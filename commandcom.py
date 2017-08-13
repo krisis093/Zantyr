@@ -4,6 +4,7 @@ import requests
 HISTORY = ['Zantyr, co (napisał(a)?|powiedział(a)?) (?P<arg>\w+)',
            'Zantyr, pokaż historię (wiadomości)? (użytkownika|gracza) (?P<arg>\w+)']
 
+
 def commandCom(client, message):
     if message.content.startswith("Zantyr, "):
         for pattern in HISTORY:
@@ -18,7 +19,7 @@ def commandCom(client, message):
         if message.content == "Zantyr, pokaż cycki":
             r = requests.get('http://oboobs.ru/a/')
             s = re.search('<div class="dimage"><img src="(.*?)"', r.text)
-            return r.text[s.start()+30:s.end()-1]
+            return r.text[s.start() + 30:s.end() - 1]
         else:
             return 'Ty chuju!'
 

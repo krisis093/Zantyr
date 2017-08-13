@@ -5,6 +5,7 @@ import random
 import json
 import importlib
 import os
+from userdb import UsersDB
 
 # serwer IP: 195.181.219.13
 
@@ -32,12 +33,13 @@ with open(WKURWFILE, "r") as f:
     for line in f:
         WKURWDICT.append(line)
 
-from userdb import UsersDB
 client.userdb = UsersDB()
+
 
 @client.event
 async def on_ready():
     log.info("Logged as {} - {}".format(client.user.name, client.user.id))
+
 
 @client.event
 async def on_message(message):
@@ -51,7 +53,7 @@ async def on_message(message):
                 client.send_typing(message.channel)
                 time.sleep(0.02 * len(msg) + 0.5)
                 await client.send_message(message.channel, msg.format(
-                    name=(message.author.nick if message.author.nick else message.author.name)))
+                    name = (message.author.nick if message.author.nick else message.author.name)))
                 break
         else:
             if random.randint(0, WKURWRATE)==0:
