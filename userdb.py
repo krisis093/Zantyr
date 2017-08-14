@@ -57,7 +57,6 @@ class UsersDB(object):
         self.db[id]['note'] = note
         self.commit()
 
-
 userdb = UsersDB()
 
 

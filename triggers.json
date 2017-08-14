@@ -1,6 +1,11 @@
 [
  {"triggers":[" nie "],
   "chance" : 0.1,
+  "minantipathy":-10,
+  "maxanitpathy":50,
+  "reactions":["{name}, ja bym tak nie przesadzał z tym negowaniem"]},
+ {"triggers":[" nie "],
+  "chance" : 0.1,
   "reactions":["{name}, ja bym tak nie przesadzał z tym negowaniem"]},
  {"triggers":["kapitalizm"],
   "chance":1,
