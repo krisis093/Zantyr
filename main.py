@@ -6,6 +6,8 @@ import json
 import importlib
 import os
 from userdb import userdb
+from AsyncFlask import app
+import threading
 
 # serwer IP: 195.181.219.13
 
@@ -34,11 +36,16 @@ with open(WKURWFILE, "r") as f:
         WKURWDICT.append(line)
 
 client.userdb = userdb
+FLASKPORT = 80  # if not working, sudo, if cannot, change this
+app.discord_client = client
+flaskthread = threading.Thread(target=app.run, args=("0.0.0.0", FLASKPORT))
 
 
 @client.event
 async def on_ready():
     log.info("Logged as {} - {}".format(client.user.name, client.user.id))
+    flaskthread.start()
+    log.info("Flask initialized!")
 
 
 @client.event

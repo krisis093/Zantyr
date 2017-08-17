@@ -1,6 +1,6 @@
 import json
 import random
-from usersdb import usersDB
+from userdb import userdb
 
 TRIGGERFILE = "./triggers.json"
 
@@ -11,11 +11,12 @@ with open(TRIGGERFILE, "r") as f:
 def triggerMe(client, message):
     for trigger in TRIGGERS:
         if any([s in message.content for s in trigger["triggers"]]):
-            if trigger["minantypathy"] and trigger["maxantypathy"]:
-                if trigger["minantypathy"] < self.db[message.author.id]['antipathy'] < trigger["maxantypathy"]:
+            if "minantipathy" in trigger.keys() and "maxantipathy" in trigger.keys():
+                if trigger["minantipathy"] < self.db[message.author.id]['antipathy'] < trigger["maxantipathy"]:
                     if random.random() < trigger["chance"]:
                         return random.choice(trigger["reactions"])
             else:
                 if random.random() < trigger["chance"]:
                     return random.choice(trigger["reactions"])
+
 EXPORT = [triggerMe]
